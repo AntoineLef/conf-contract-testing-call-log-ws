@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ContractTesting.Infra
 {
-    internal class ContactRestClient : IContactRepository
+    public class ContactRestClient : IContactRepository
     {
 
         private HttpClient client = new HttpClient();
@@ -22,12 +22,13 @@ namespace ContractTesting.Infra
 
         public async Task<Contact> GetContactAsync(string callerId)
         {
-            HttpResponseMessage response = await client.GetAsync($"{endpoint}/contacts/{callerId}");
+            HttpResponseMessage response = await client.GetAsync($"contacts/{callerId}");
             response.EnsureSuccessStatusCode();
 
             // Deserialize the updated product from the response body.
             using var contentStream =
                await response.Content.ReadAsStreamAsync();
+            Console.WriteLine(response.Content.ReadAsStringAsync().Result);
 
             return await JsonSerializer.DeserializeAsync<Contact>(contentStream);
         }

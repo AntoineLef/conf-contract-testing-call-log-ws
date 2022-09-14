@@ -18,7 +18,7 @@ namespace ContractTesting
 {
     public class Startup
     {
-        private readonly string CONTACT_WS_URL  = "http://127.0.0.1:8080/api/telephony";
+        private readonly string CONTACT_WS_URL  = "http://127.0.0.1:8082/api/";
 
         public Startup(IConfiguration configuration)
         {

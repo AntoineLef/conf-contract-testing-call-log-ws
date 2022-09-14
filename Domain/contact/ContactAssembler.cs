@@ -8,7 +8,7 @@ namespace ContractTesting.Domain.contact
         {
             ContactDto contactDto = new ContactDto
             {
-                TelephoneNumber = contact.TelephoneNumber
+                TelephoneNumber = contact.telephoneNumber
             };
 
             return contactDto;

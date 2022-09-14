@@ -8,7 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Consumer.Tests\**" />
+    <Content Remove="Consumer.Tests\**" />
+    <EmbeddedResource Remove="Consumer.Tests\**" />
+    <None Remove="Consumer.Tests\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.0" />
+    <PackageReference Include="PactNet" Version="4.1.0" />
   </ItemGroup>
 
 

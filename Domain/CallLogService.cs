@@ -28,7 +28,8 @@ namespace ContractTesting.Services
             callLogs.ForEach(delegate(CallLog callLog){
                 string callerId = callLog.CallerId;
                 Contact foundContact = contactRepository.GetContactAsync(callerId).Result;
-                callLog.Caller  = foundContact;
+                Console.WriteLine(foundContact.telephoneNumber);
+                callLog.Caller = foundContact;
                 _logger.LogInformation($"Fetching caller's contact info with Id: {callerId} for call log: {callLog.Id}");
             });
 
